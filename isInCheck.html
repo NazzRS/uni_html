@@ -1,0 +1,61 @@
+<html>
+<head>
+<script>
+
+	var xK = parseInt(prompt("Enter the King's x-coordinate"));
+	var yK = parseInt(prompt("Enter the King's y-coordinate"));
+	var xQ = parseInt(prompt("Enter the Queens's x-coordinate"));
+	var yQ = parseInt(prompt("Enter the Queens's y-coordinate"));
+	
+	document.write('<table border="1";>');
+	document.write("<tr><td>&nbsp;</td>");
+	for (i=0;i<8;i++){
+		document.write("<td style='width:20; text-align: center;'>"+i+"</td>");
+	}
+	document.write('</tr>');
+	
+	for (i=0;i<8;i++){
+		document.write("<tr><td>"+i+"</td>");
+		for (j=0;j<8;j++){
+			if (i==yK&&j==xK){
+				if ((j+i)%2==0){
+					document.write("<td style='width:20;background:black;color:white;'>K</td>")
+				}
+				else {
+					document.write("<td style='width:20;'>K</td>")
+				}
+			}
+			else if (i==yQ&&j==xQ){
+				if ((j+i)%2==0){
+					document.write("<td style='width:20;background:black;color:white;'>Q</td>")
+				}
+				else {
+					document.write("<td style='width:20;'>Q</td>")
+				}
+			}
+			else {
+				if ((j+i)%2==0){
+					document.write("<td style='width:20;background:black;color:white;'>&nbsp;</td>")
+				}
+				else {
+					document.write("<td style='width:20;'>&nbsp;</td>")
+				}
+			}
+		}
+		document.write("</tr>")
+	}
+	document.write('</table>');
+	
+	if (xK==xQ || yK==yQ || Math.abs(xK-xQ)==Math.abs(yK-yQ)) {
+		document.write("The King is in Check!");
+	}
+	else {
+		document.write("The King is NOT in Check.");
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+<html>
